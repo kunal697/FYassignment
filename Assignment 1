@@ -1,7 +1,8 @@
  //                       Assignment 1
 //Student Record using structures
-#include<stdio.h>
 
+
+#include<stdio.h>
 int main(){
    struct student{
     char nm[50];
