@@ -1,8 +1,12 @@
+ Hello and welcome to this repository!
 
-Welcome to the GitHub repository for the first year C Programming Subject assignment questions. This repository contains all the necessary files and instructions for completing the assignment.
+In this repository, you will find the solution codes for the assignments of the C Programming. These solutions have been provided to help you understand the concepts better and to serve as a reference for your own work.
 
-Before getting started, please make sure you have a basic understanding of C programming concepts. If you need any help or clarification, don't hesitate to reach out to your instructor or teaching assistant.
+Please note that while these solutions have been tested and verified, they may not necessarily be the optimal or most efficient solutions. Therefore, it is recommended that you use them as a reference and not copy them directly.
 
-To begin, simply download or clone this repository and follow the instructions provided in the assignment document. Make sure to submit your completed assignment by the deadline mentioned in the document.
+If you have any questions or suggestions, please feel free to contact me. I hope you find these solutions helpful in your studies.
 
-Good luck and happy coding!
+Thank you for visiting!
+
+Best regards, 
+Kunal 
