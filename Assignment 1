@@ -1,0 +1,104 @@
+ //                       Assignment 1
+//Student Record using structures
+#include<stdio.h>
+
+int main(){
+   struct student{
+    char nm[50];
+    int sub[5];
+   }stud[5];
+   
+  int i,j,n;
+  for(i=0;i<10;i++)
+  {
+  printf("Enter name of the student %d:",i+1);
+  scanf("%s",stud[i].nm);
+  printf("Enter five subject mark of student %d:",i+1);
+  for(j=0;j<5;j++)
+    {
+      scanf("%d",&stud[i].sub[j]);
+    }
+  }
+printf("Record of Student is:\n");
+for(i=0;i<10;i++){
+     printf("\n%s\t",stud[i].nm);
+     for(j=0;j<5;j++){
+    printf("\t%d",stud[i].sub[j]);
+     }
+
+//No of Failed Students
+  for (i=0;i<10;i++) 
+    {
+    
+        for (j=0;j<5;j++) 
+        {
+            if(stud[i].sub[j]<40)
+            {
+                count++;
+                break;
+            }
+        }
+        
+    }
+    printf("\n Total no of student failing in one subject is:%d\n",count);
+//Number of passing student
+
+    int sum1;
+    int count1=0;
+    for (i=0;i<10;i++) 
+    {
+        sum1=0;
+        for (j=0;j<5;j++) 
+        {
+            sum1=sum1+stud[i].sub[j];
+        }
+        if(sum1>=200)
+        {
+            count1++;
+        }
+    }
+    printf("Total no of passing student in the class is:%d\n",count1);
+
+//Total number of Distinction
+ int sum2=0,count2=0;
+    for (i=0;i<10;i++) 
+    {
+        sum2=0;
+        for (j=0;j<5;j++) 
+        {
+            sum2=sum2+stud[i].sub[j];
+        }
+        if(sum2>=375)
+        {
+            count2++;
+        }
+    }
+    printf("Total no of distinctions in the class is:%d\n",count2);
+
+    //Overall Percentage of class
+    float per;
+    per=count1*10;
+	
+    printf("Overall percentage of class is %0.1f\n ",per);
+    
+    //Student With Highest Marks
+       int h;
+	   for(j=0;j<5;j++){
+       h=0;
+       
+       for(i=0;i<10;i++){
+           if(h<stud[i].sub[j]){
+               h=stud[i].sub[j];
+           }
+           
+           }
+		printf("Student with highest marks %d in subject %d is %s\n",h,j+1,stud[j].nm);
+
+        }
+    
+    
+    
+return 0;
+}
+
+ 
