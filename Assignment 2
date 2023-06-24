@@ -1,0 +1,30 @@
+//                                                           Assignment 2
+
+//Fibonacci Series using recursion
+#include<stdio.h>
+int fibo(int n);
+int fibo(int n){
+	static int n1=0,n2=1,n3;
+	if(n>0)
+	{ 
+                       n3=n1+n2;
+		printf(" %d ",n3);
+    
+		n1=n2;
+		n2=n3;
+		fibo(n-1);
+	}
+	else{
+		return 1;
+	}
+}
+int main()
+{
+int n;
+printf("Enter the range of fibonacci series:");
+scanf("%d",&n);
+printf("Fibonacci Series is:\n");
+printf("%d %d",0,1);
+fibo(n-2);
+return 0;
+}
