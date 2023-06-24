@@ -1,0 +1,73 @@
+#include<stdio.h>
+struct complex
+{
+	float real,imr;
+};
+struct complex read();
+struct complex add(struct complex p , struct complex q);
+struct complex multi(struct complex i , struct complex j);
+void display(struct complex n );
+
+struct complex read ()
+{
+	struct complex c;
+	
+	printf("Enter the Real part of number: \n");
+	scanf("%f",&c.real);
+	printf("Enter the imaginary part of number : \n");
+	scanf("%f",&c.imr);
+	
+	return c;
+}
+
+void display (struct complex n)
+{
+	printf("%.1f + i%.1f\n", n.real,n.imr);
+}
+
+struct complex add(struct complex p, struct complex q )
+{
+	struct complex A;
+	
+	A.real = (p.real+q.real);
+	A.imr = (p.imr+q.imr);
+	
+	return A;
+}
+struct complex multi(struct complex i , struct complex j)
+{
+	struct complex M;
+	
+	M.real= (i.real*j.real - i.imr*j.imr);
+	M.imr = (i.real*j.imr- i.imr*j.real);
+	
+	return M;
+	
+}
+
+int main ()
+{
+	
+	struct complex v,w,x,y;
+	printf("Enter the first number :\n ");
+	v = read();
+	printf("Enter the second number :\n ");
+	w = read();
+	
+	printf("First complex number is :\n ");
+	display(v);
+	printf("Second complex number is :\n ");
+	display(w);
+	
+	x = add(v,w);
+	y = multi(v,w);
+	
+	printf("Addition of give complex no is : ");
+	display(x);
+	printf("\n");
+	printf("Multiplication of given complex number is : ");
+	display(y);
+	
+	return 0; 
+	
+}
