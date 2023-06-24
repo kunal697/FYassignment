@@ -1,0 +1,160 @@
+//                                      Assignment 4
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+int length(char *a);
+int palindrome(char *a);
+int compare(char *a,char *b);
+void copy(char *b,char *a);
+void reverse(char *a);
+void substring(char *a,char *b);
+int main()
+{
+char a[100],b[100];
+int result,ch;
+do
+{
+printf("\n\n1. Length of the string");
+printf("\n2. Check the string for Palindrome");
+printf("\n3. String Comparison");
+printf("\n4. Copy the string");
+printf("\n5. Reverse the given string");
+printf("\n6. Find Subsrting of a given string\n7. Quit");
+printf("\n\n Enter ur choice : ");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: printf("\n Enter a string : ");
+scanf("%s",a);
+printf("\n Length of a given string is : %d ",length(a));
+break;
+case 2: printf("\n Enter a string : ");
+scanf("%s",a);
+result = palindrome(a);
+if(result == 0)
+printf("\n String is Not Palindrome ");
+else
+printf("\n String is Palindrome ");
+break;
+case 3: printf("\n Enter first string : ");
+scanf("%s",a);
+printf("\n Enter second string : ");
+scanf("%s",b);
+result = compare(a,b);
+if(result == 0)
+printf("\n Strings are Equal");
+else
+printf("\n Strings are Not Equal");
+break;
+case 4: printf("\n Enter a String : ");
+scanf("%s",a);
+copy(b,a);
+printf("\n Copied String is : %s",b);
+break;
+case 5: printf("\n Enter a String : ");
+scanf("%s",a);
+reverse(a);
+printf("\n Reversed String is : %s",a);
+break;
+case 6: printf("\n Enter first string : ");
+scanf("%s",a);
+printf("\n Enter substring : ");
+scanf("%s",b);
+substring(a,b);
+break;
+}
+}while(ch!=7);
+return 0;
+}
+int length(char *a)
+{
+int result=0;
+while(*(a+result) != '\0')
+result++;
+return (result);
+}
+int palindrome(char *a)
+{
+int i,result,flag=0;
+result=length(a);
+for (i=0;i<result;i++)
+{
+if(a[i]==a[result-i-1])
+flag=flag+1;
+}
+if(flag==result)
+return 1;
+else
+return 0;
+}
+int compare(char *a,char *b)
+{
+while (*a != '\0')
+{
+if(*a > *b)
+return (1);
+if(*a < *b)
+return (-1);
+a++;
+b++;
+}
+return (0);
+}
+void copy(char *b,char *a)
+{
+while (*a != '\0')
+{
+*b = *a;
+a++;
+b++;
+}
+*b = '\0';
+}
+void reverse(char *a)
+{
+char *p,*q;
+char temp;
+p=q=a;
+while(*q != '\0')
+q++;
+q--;
+while(p<q)
+{
+temp = *p;
+*p=*q;
+*q=temp;
+p++;
+q--;
+}
+}
+void substring(char *a, char *b)
+{
+int i,j,temp;
+for(i = 0; *(a+i) != '\0'; i++)
+{
+j = 0;
+if(*(a+i) == *(b+j))
+{
+temp = i+1;
+while (*(a+i) == *(b+j))
+{
+i++;
+j++;
+}
+if(*(b+j) == '\0')
+printf("\n The Substring is Present in given string at Position %d",
+temp);
+else
+{
+i = temp;
+temp = 0;
+}
+}
+}
+if(temp == 0)
+printf("\n The Substring is Not Present");
+
+}
+
+
